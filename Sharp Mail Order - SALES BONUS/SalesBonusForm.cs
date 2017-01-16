@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sharp_Mail_Order___SALES_BONUS
 {
-    public partial class Form1 : Form
+    public partial class SalesBonusForm : Form
     {
-        public Form1()
+        public SalesBonusForm()
         {
             InitializeComponent();
         }

@@ -16,7 +16,7 @@ namespace Sharp_Mail_Order___SALES_BONUS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SalesBonusForm());
         }
     }
 }
