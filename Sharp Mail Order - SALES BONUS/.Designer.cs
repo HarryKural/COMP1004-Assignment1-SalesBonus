@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesBonusForm));
             this.CalculateButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -44,7 +45,9 @@
             this.Language = new System.Windows.Forms.GroupBox();
             this.FrancaisRadioButton = new System.Windows.Forms.RadioButton();
             this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.Language.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // CalculateButton
@@ -159,6 +162,7 @@
             this.SalesBonusTextBox.ReadOnly = true;
             this.SalesBonusTextBox.Size = new System.Drawing.Size(141, 20);
             this.SalesBonusTextBox.TabIndex = 17;
+            this.SalesBonusTextBox.TabStop = false;
             // 
             // Language
             // 
@@ -181,7 +185,7 @@
             this.FrancaisRadioButton.Size = new System.Drawing.Size(78, 20);
             this.FrancaisRadioButton.TabIndex = 9;
             this.FrancaisRadioButton.TabStop = true;
-            this.FrancaisRadioButton.Text = "Francais";
+            this.FrancaisRadioButton.Text = "Français";
             this.FrancaisRadioButton.UseVisualStyleBackColor = true;
             // 
             // EnglishRadioButton
@@ -197,10 +201,21 @@
             this.EnglishRadioButton.Text = "English";
             this.EnglishRadioButton.UseVisualStyleBackColor = true;
             // 
+            // Logo
+            // 
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(32, 47);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(144, 88);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 19;
+            this.Logo.TabStop = false;
+            // 
             // SalesBonusForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.Language);
             this.Controls.Add(this.SalesBonusTextBox);
             this.Controls.Add(this.TotalSalesTextBox);
@@ -220,6 +235,7 @@
             this.Text = "Sales Bonus";
             this.Language.ResumeLayout(false);
             this.Language.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +259,7 @@
         private System.Windows.Forms.GroupBox Language;
         private System.Windows.Forms.RadioButton FrancaisRadioButton;
         private System.Windows.Forms.RadioButton EnglishRadioButton;
+        private System.Windows.Forms.PictureBox Logo;
     }
 }
 
