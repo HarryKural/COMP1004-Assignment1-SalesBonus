@@ -31,19 +31,20 @@
             this.CalculateButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.LanguageLabel = new System.Windows.Forms.Label();
-            this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
-            this.FrancaisRadioButton = new System.Windows.Forms.RadioButton();
             this.EmployeeNameLabel = new System.Windows.Forms.Label();
             this.EmployeeIDLabel = new System.Windows.Forms.Label();
             this.HoursWorkedLabel = new System.Windows.Forms.Label();
             this.TotalSalesLabel = new System.Windows.Forms.Label();
             this.SalesBonusLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
+            this.EmployeeIDTextBox = new System.Windows.Forms.TextBox();
             this.HoursWorkedTextBox = new System.Windows.Forms.TextBox();
             this.TotalSalesTextBox = new System.Windows.Forms.TextBox();
             this.SalesBonusTextBox = new System.Windows.Forms.TextBox();
+            this.Language = new System.Windows.Forms.GroupBox();
+            this.FrancaisRadioButton = new System.Windows.Forms.RadioButton();
+            this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
+            this.Language.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalculateButton
@@ -72,40 +73,6 @@
             this.ClearButton.TabIndex = 2;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
-            // 
-            // LanguageLabel
-            // 
-            this.LanguageLabel.AutoSize = true;
-            this.LanguageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LanguageLabel.Location = new System.Drawing.Point(252, 67);
-            this.LanguageLabel.Name = "LanguageLabel";
-            this.LanguageLabel.Size = new System.Drawing.Size(81, 20);
-            this.LanguageLabel.TabIndex = 3;
-            this.LanguageLabel.Text = "Language";
-            // 
-            // EnglishRadioButton
-            // 
-            this.EnglishRadioButton.AutoSize = true;
-            this.EnglishRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnglishRadioButton.Location = new System.Drawing.Point(256, 90);
-            this.EnglishRadioButton.Name = "EnglishRadioButton";
-            this.EnglishRadioButton.Size = new System.Drawing.Size(70, 20);
-            this.EnglishRadioButton.TabIndex = 6;
-            this.EnglishRadioButton.TabStop = true;
-            this.EnglishRadioButton.Text = "English";
-            this.EnglishRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FrancaisRadioButton
-            // 
-            this.FrancaisRadioButton.AutoSize = true;
-            this.FrancaisRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FrancaisRadioButton.Location = new System.Drawing.Point(256, 117);
-            this.FrancaisRadioButton.Name = "FrancaisRadioButton";
-            this.FrancaisRadioButton.Size = new System.Drawing.Size(78, 20);
-            this.FrancaisRadioButton.TabIndex = 7;
-            this.FrancaisRadioButton.TabStop = true;
-            this.FrancaisRadioButton.Text = "Francais";
-            this.FrancaisRadioButton.UseVisualStyleBackColor = true;
             // 
             // EmployeeNameLabel
             // 
@@ -157,19 +124,19 @@
             this.SalesBonusLabel.TabIndex = 12;
             this.SalesBonusLabel.Text = "Sales Bonus:";
             // 
-            // NameTextBox
+            // EmployeeNameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(193, 188);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(194, 20);
-            this.NameTextBox.TabIndex = 13;
+            this.EmployeeNameTextBox.Location = new System.Drawing.Point(193, 188);
+            this.EmployeeNameTextBox.Name = "EmployeeNameTextBox";
+            this.EmployeeNameTextBox.Size = new System.Drawing.Size(194, 20);
+            this.EmployeeNameTextBox.TabIndex = 13;
             // 
-            // IDTextBox
+            // EmployeeIDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(193, 229);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(140, 20);
-            this.IDTextBox.TabIndex = 14;
+            this.EmployeeIDTextBox.Location = new System.Drawing.Point(193, 229);
+            this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
+            this.EmployeeIDTextBox.Size = new System.Drawing.Size(140, 20);
+            this.EmployeeIDTextBox.TabIndex = 14;
             // 
             // HoursWorkedTextBox
             // 
@@ -189,32 +156,70 @@
             // 
             this.SalesBonusTextBox.Location = new System.Drawing.Point(193, 355);
             this.SalesBonusTextBox.Name = "SalesBonusTextBox";
+            this.SalesBonusTextBox.ReadOnly = true;
             this.SalesBonusTextBox.Size = new System.Drawing.Size(141, 20);
             this.SalesBonusTextBox.TabIndex = 17;
+            // 
+            // Language
+            // 
+            this.Language.Controls.Add(this.FrancaisRadioButton);
+            this.Language.Controls.Add(this.EnglishRadioButton);
+            this.Language.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Language.Location = new System.Drawing.Point(241, 47);
+            this.Language.Name = "Language";
+            this.Language.Size = new System.Drawing.Size(200, 88);
+            this.Language.TabIndex = 18;
+            this.Language.TabStop = false;
+            this.Language.Text = "Language";
+            // 
+            // FrancaisRadioButton
+            // 
+            this.FrancaisRadioButton.AutoSize = true;
+            this.FrancaisRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrancaisRadioButton.Location = new System.Drawing.Point(6, 52);
+            this.FrancaisRadioButton.Name = "FrancaisRadioButton";
+            this.FrancaisRadioButton.Size = new System.Drawing.Size(78, 20);
+            this.FrancaisRadioButton.TabIndex = 9;
+            this.FrancaisRadioButton.TabStop = true;
+            this.FrancaisRadioButton.Text = "Francais";
+            this.FrancaisRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // EnglishRadioButton
+            // 
+            this.EnglishRadioButton.AutoSize = true;
+            this.EnglishRadioButton.Checked = true;
+            this.EnglishRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnglishRadioButton.Location = new System.Drawing.Point(6, 25);
+            this.EnglishRadioButton.Name = "EnglishRadioButton";
+            this.EnglishRadioButton.Size = new System.Drawing.Size(70, 20);
+            this.EnglishRadioButton.TabIndex = 8;
+            this.EnglishRadioButton.TabStop = true;
+            this.EnglishRadioButton.Text = "English";
+            this.EnglishRadioButton.UseVisualStyleBackColor = true;
             // 
             // SalesBonusForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.Language);
             this.Controls.Add(this.SalesBonusTextBox);
             this.Controls.Add(this.TotalSalesTextBox);
             this.Controls.Add(this.HoursWorkedTextBox);
-            this.Controls.Add(this.IDTextBox);
-            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.EmployeeIDTextBox);
+            this.Controls.Add(this.EmployeeNameTextBox);
             this.Controls.Add(this.SalesBonusLabel);
             this.Controls.Add(this.TotalSalesLabel);
             this.Controls.Add(this.HoursWorkedLabel);
             this.Controls.Add(this.EmployeeIDLabel);
             this.Controls.Add(this.EmployeeNameLabel);
-            this.Controls.Add(this.FrancaisRadioButton);
-            this.Controls.Add(this.EnglishRadioButton);
-            this.Controls.Add(this.LanguageLabel);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.CalculateButton);
             this.Name = "SalesBonusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Bonus";
+            this.Language.ResumeLayout(false);
+            this.Language.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,19 +230,19 @@
         private System.Windows.Forms.Button CalculateButton;
         private System.Windows.Forms.Button PrintButton;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.Label LanguageLabel;
-        private System.Windows.Forms.RadioButton EnglishRadioButton;
-        private System.Windows.Forms.RadioButton FrancaisRadioButton;
         private System.Windows.Forms.Label EmployeeNameLabel;
         private System.Windows.Forms.Label EmployeeIDLabel;
         private System.Windows.Forms.Label HoursWorkedLabel;
         private System.Windows.Forms.Label TotalSalesLabel;
         private System.Windows.Forms.Label SalesBonusLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.TextBox EmployeeNameTextBox;
+        private System.Windows.Forms.TextBox EmployeeIDTextBox;
         private System.Windows.Forms.TextBox HoursWorkedTextBox;
         private System.Windows.Forms.TextBox TotalSalesTextBox;
         private System.Windows.Forms.TextBox SalesBonusTextBox;
+        private System.Windows.Forms.GroupBox Language;
+        private System.Windows.Forms.RadioButton FrancaisRadioButton;
+        private System.Windows.Forms.RadioButton EnglishRadioButton;
     }
 }
 
