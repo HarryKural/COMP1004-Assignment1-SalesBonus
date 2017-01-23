@@ -52,7 +52,8 @@
             // 
             // CalculateButton
             // 
-            this.CalculateButton.Location = new System.Drawing.Point(12, 426);
+            this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateButton.Location = new System.Drawing.Point(12, 381);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(75, 23);
             this.CalculateButton.TabIndex = 0;
@@ -61,7 +62,8 @@
             // 
             // PrintButton
             // 
-            this.PrintButton.Location = new System.Drawing.Point(213, 426);
+            this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintButton.Location = new System.Drawing.Point(191, 381);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(75, 23);
             this.PrintButton.TabIndex = 1;
@@ -70,7 +72,8 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(397, 426);
+            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButton.Location = new System.Drawing.Point(347, 381);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(75, 23);
             this.ClearButton.TabIndex = 2;
@@ -81,7 +84,7 @@
             // 
             this.EmployeeNameLabel.AutoSize = true;
             this.EmployeeNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeNameLabel.Location = new System.Drawing.Point(51, 186);
+            this.EmployeeNameLabel.Location = new System.Drawing.Point(51, 165);
             this.EmployeeNameLabel.Name = "EmployeeNameLabel";
             this.EmployeeNameLabel.Size = new System.Drawing.Size(140, 20);
             this.EmployeeNameLabel.TabIndex = 8;
@@ -91,7 +94,7 @@
             // 
             this.EmployeeIDLabel.AutoSize = true;
             this.EmployeeIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeIDLabel.Location = new System.Drawing.Point(83, 227);
+            this.EmployeeIDLabel.Location = new System.Drawing.Point(83, 206);
             this.EmployeeIDLabel.Name = "EmployeeIDLabel";
             this.EmployeeIDLabel.Size = new System.Drawing.Size(104, 20);
             this.EmployeeIDLabel.TabIndex = 9;
@@ -101,7 +104,7 @@
             // 
             this.HoursWorkedLabel.AutoSize = true;
             this.HoursWorkedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoursWorkedLabel.Location = new System.Drawing.Point(72, 268);
+            this.HoursWorkedLabel.Location = new System.Drawing.Point(72, 247);
             this.HoursWorkedLabel.Name = "HoursWorkedLabel";
             this.HoursWorkedLabel.Size = new System.Drawing.Size(115, 20);
             this.HoursWorkedLabel.TabIndex = 10;
@@ -111,7 +114,7 @@
             // 
             this.TotalSalesLabel.AutoSize = true;
             this.TotalSalesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalSalesLabel.Location = new System.Drawing.Point(95, 312);
+            this.TotalSalesLabel.Location = new System.Drawing.Point(95, 291);
             this.TotalSalesLabel.Name = "TotalSalesLabel";
             this.TotalSalesLabel.Size = new System.Drawing.Size(92, 20);
             this.TotalSalesLabel.TabIndex = 11;
@@ -121,7 +124,7 @@
             // 
             this.SalesBonusLabel.AutoSize = true;
             this.SalesBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesBonusLabel.Location = new System.Drawing.Point(84, 353);
+            this.SalesBonusLabel.Location = new System.Drawing.Point(84, 332);
             this.SalesBonusLabel.Name = "SalesBonusLabel";
             this.SalesBonusLabel.Size = new System.Drawing.Size(103, 20);
             this.SalesBonusLabel.TabIndex = 12;
@@ -129,38 +132,38 @@
             // 
             // EmployeeNameTextBox
             // 
-            this.EmployeeNameTextBox.Location = new System.Drawing.Point(193, 188);
+            this.EmployeeNameTextBox.Location = new System.Drawing.Point(193, 167);
             this.EmployeeNameTextBox.Name = "EmployeeNameTextBox";
             this.EmployeeNameTextBox.Size = new System.Drawing.Size(194, 20);
             this.EmployeeNameTextBox.TabIndex = 13;
             // 
             // EmployeeIDTextBox
             // 
-            this.EmployeeIDTextBox.Location = new System.Drawing.Point(193, 229);
+            this.EmployeeIDTextBox.Location = new System.Drawing.Point(193, 208);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
-            this.EmployeeIDTextBox.Size = new System.Drawing.Size(140, 20);
+            this.EmployeeIDTextBox.Size = new System.Drawing.Size(194, 20);
             this.EmployeeIDTextBox.TabIndex = 14;
             // 
             // HoursWorkedTextBox
             // 
-            this.HoursWorkedTextBox.Location = new System.Drawing.Point(193, 268);
+            this.HoursWorkedTextBox.Location = new System.Drawing.Point(193, 247);
             this.HoursWorkedTextBox.Name = "HoursWorkedTextBox";
-            this.HoursWorkedTextBox.Size = new System.Drawing.Size(140, 20);
+            this.HoursWorkedTextBox.Size = new System.Drawing.Size(194, 20);
             this.HoursWorkedTextBox.TabIndex = 15;
             // 
             // TotalSalesTextBox
             // 
-            this.TotalSalesTextBox.Location = new System.Drawing.Point(193, 312);
+            this.TotalSalesTextBox.Location = new System.Drawing.Point(193, 291);
             this.TotalSalesTextBox.Name = "TotalSalesTextBox";
-            this.TotalSalesTextBox.Size = new System.Drawing.Size(141, 20);
+            this.TotalSalesTextBox.Size = new System.Drawing.Size(194, 20);
             this.TotalSalesTextBox.TabIndex = 16;
             // 
             // SalesBonusTextBox
             // 
-            this.SalesBonusTextBox.Location = new System.Drawing.Point(193, 355);
+            this.SalesBonusTextBox.Location = new System.Drawing.Point(193, 334);
             this.SalesBonusTextBox.Name = "SalesBonusTextBox";
             this.SalesBonusTextBox.ReadOnly = true;
-            this.SalesBonusTextBox.Size = new System.Drawing.Size(141, 20);
+            this.SalesBonusTextBox.Size = new System.Drawing.Size(194, 20);
             this.SalesBonusTextBox.TabIndex = 17;
             this.SalesBonusTextBox.TabStop = false;
             // 
@@ -171,7 +174,7 @@
             this.Language.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Language.Location = new System.Drawing.Point(241, 47);
             this.Language.Name = "Language";
-            this.Language.Size = new System.Drawing.Size(200, 88);
+            this.Language.Size = new System.Drawing.Size(146, 88);
             this.Language.TabIndex = 18;
             this.Language.TabStop = false;
             this.Language.Text = "Language";
@@ -204,9 +207,9 @@
             // Logo
             // 
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(32, 47);
+            this.Logo.Location = new System.Drawing.Point(55, 47);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(144, 88);
+            this.Logo.Size = new System.Drawing.Size(132, 88);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 19;
             this.Logo.TabStop = false;
@@ -214,7 +217,7 @@
             // SalesBonusForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.Language);
             this.Controls.Add(this.SalesBonusTextBox);
@@ -230,6 +233,8 @@
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.CalculateButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SalesBonusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Bonus";
