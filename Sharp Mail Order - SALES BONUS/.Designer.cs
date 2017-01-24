@@ -52,7 +52,7 @@
             // 
             // CalculateButton
             // 
-            this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculateButton.Location = new System.Drawing.Point(12, 381);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(75, 23);
@@ -62,7 +62,7 @@
             // 
             // PrintButton
             // 
-            this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintButton.Location = new System.Drawing.Point(191, 381);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(75, 23);
@@ -72,7 +72,7 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearButton.Location = new System.Drawing.Point(347, 381);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(75, 23);
@@ -86,9 +86,9 @@
             this.EmployeeNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeNameLabel.Location = new System.Drawing.Point(51, 165);
             this.EmployeeNameLabel.Name = "EmployeeNameLabel";
-            this.EmployeeNameLabel.Size = new System.Drawing.Size(140, 20);
+            this.EmployeeNameLabel.Size = new System.Drawing.Size(136, 20);
             this.EmployeeNameLabel.TabIndex = 8;
-            this.EmployeeNameLabel.Text = "Employee\'s Name:";
+            this.EmployeeNameLabel.Text = "Employee\'s Name";
             // 
             // EmployeeIDLabel
             // 
@@ -123,10 +123,10 @@
             // SalesBonusLabel
             // 
             this.SalesBonusLabel.AutoSize = true;
-            this.SalesBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesBonusLabel.Location = new System.Drawing.Point(84, 332);
+            this.SalesBonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesBonusLabel.Location = new System.Drawing.Point(72, 332);
             this.SalesBonusLabel.Name = "SalesBonusLabel";
-            this.SalesBonusLabel.Size = new System.Drawing.Size(103, 20);
+            this.SalesBonusLabel.Size = new System.Drawing.Size(115, 20);
             this.SalesBonusLabel.TabIndex = 12;
             this.SalesBonusLabel.Text = "Sales Bonus:";
             // 
@@ -141,21 +141,21 @@
             // 
             this.EmployeeIDTextBox.Location = new System.Drawing.Point(193, 208);
             this.EmployeeIDTextBox.Name = "EmployeeIDTextBox";
-            this.EmployeeIDTextBox.Size = new System.Drawing.Size(194, 20);
+            this.EmployeeIDTextBox.Size = new System.Drawing.Size(149, 20);
             this.EmployeeIDTextBox.TabIndex = 14;
             // 
             // HoursWorkedTextBox
             // 
             this.HoursWorkedTextBox.Location = new System.Drawing.Point(193, 247);
             this.HoursWorkedTextBox.Name = "HoursWorkedTextBox";
-            this.HoursWorkedTextBox.Size = new System.Drawing.Size(194, 20);
+            this.HoursWorkedTextBox.Size = new System.Drawing.Size(149, 20);
             this.HoursWorkedTextBox.TabIndex = 15;
             // 
             // TotalSalesTextBox
             // 
             this.TotalSalesTextBox.Location = new System.Drawing.Point(193, 291);
             this.TotalSalesTextBox.Name = "TotalSalesTextBox";
-            this.TotalSalesTextBox.Size = new System.Drawing.Size(194, 20);
+            this.TotalSalesTextBox.Size = new System.Drawing.Size(149, 20);
             this.TotalSalesTextBox.TabIndex = 16;
             // 
             // SalesBonusTextBox
@@ -163,7 +163,7 @@
             this.SalesBonusTextBox.Location = new System.Drawing.Point(193, 334);
             this.SalesBonusTextBox.Name = "SalesBonusTextBox";
             this.SalesBonusTextBox.ReadOnly = true;
-            this.SalesBonusTextBox.Size = new System.Drawing.Size(194, 20);
+            this.SalesBonusTextBox.Size = new System.Drawing.Size(149, 20);
             this.SalesBonusTextBox.TabIndex = 17;
             this.SalesBonusTextBox.TabStop = false;
             // 
