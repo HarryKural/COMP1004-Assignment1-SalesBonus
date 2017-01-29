@@ -48,5 +48,50 @@ namespace Sharp_Mail_Order___SALES_BONUS
             }
             
         }
+
+        /// <summary>
+        /// This method handle clicks on all the buttons
+        /// </summary>
+        public void buttonClickHandler(object sender, EventArgs e)
+        {
+            Button ClickHandler = sender as Button;
+
+            switch (ClickHandler.Tag.ToString())
+            {
+                case "Calculate":
+                    // variables
+                    double hoursWorked = Double.Parse(HoursWorkedTextBox.Text);
+                    double monthlySales = Double.Parse(TotalMonthlySalesTextBox.Text);
+                    double percentageOfHoursWorked;
+                    double bonusAmount;
+                    double salesBonus;
+                    
+                    // calculating Percentage of hours worked during the bonus period
+                    percentageOfHoursWorked = hoursWorked / 160;
+
+                    // calculating Total Bonus Amount 2%
+                    bonusAmount = monthlySales * 0.02;
+
+                    // calculating Sales Bonus
+                    salesBonus = percentageOfHoursWorked * bonusAmount;
+
+                    // setting salesBonus text field to calculated value(string) 
+                    SalesBonusTextBox.Text = salesBonus.ToString();
+                    break;
+                case "Print":
+                    MessageBox.Show("Your information is in the process to print. Please Wait...", "Printing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case "Clear":
+                    EmployeeNameTextBox.Text = "";
+                    EmployeeIDTextBox.Text = "";
+                    HoursWorkedTextBox.Text = "";
+                    SalesBonusTextBox.Text = "";
+
+                    // focusing cursor to the first field employee name
+                    EmployeeNameTextBox.Focus();
+                    break;
+            }
+        }
+        
     }
 }
