@@ -25,9 +25,12 @@ namespace Sharp_Mail_Order___SALES_BONUS
         {
             TextBox ValidValues = sender as TextBox;
 
-            switch (ValidValues.Tag.ToString())
-            {
-                case "hoursWorked":
+            // fields cannot be empty so, it will not calculate anything
+            if (HoursWorkedTextBox.Text != ""  || TotalMonthlySalesTextBox.Text != "")
+            { 
+                switch (ValidValues.Tag.ToString())
+                {
+                    case "hoursWorked":
 
                     double hoursWorked = 0;
 
@@ -36,7 +39,7 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     {
                         if (hoursWorked < 0 || hoursWorked > 160)
                         {
-                            MessageBox.Show("Hours worked cannot exceed 160 hours.", "Warning: Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(EnglishRadioButton.Checked ? "Hours worked cannot exceed 160 hours." : "Les heures travaillées ne peuvent excéder 160 heures.", EnglishRadioButton.Checked ? "Warning: Invalid Value" : "Avertissement: valeur non valide", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
                             HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
                         }
@@ -46,13 +49,14 @@ namespace Sharp_Mail_Order___SALES_BONUS
                         // error message if entered value is not a number
                         if (HoursWorkedTextBox.Text != "")
                         {
-                            MessageBox.Show("You must enter any number.", "Error: Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(EnglishRadioButton.Checked ? "You must enter any number." : "Vous devez entrer n'importe quel numéro.", EnglishRadioButton.Checked ? "Error: Invalid Entry" : "Erreur: entrée non valide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             // HoursWorkedTextBox.Text = String.Empty;
                             HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
                             HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
                         }
                     }
                     break;
+
                 case "monthlySales":
 
                     double monthlySales = 0;
@@ -62,16 +66,15 @@ namespace Sharp_Mail_Order___SALES_BONUS
                         // error message if entered value is not a number
                         if (TotalMonthlySalesTextBox.Text != "")
                         {
-                            MessageBox.Show("You must enter any number.", "Error: Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            MessageBox.Show(EnglishRadioButton.Checked ? "You must enter any number." : "Vous devez entrer n'importe quel numéro.", EnglishRadioButton.Checked ? "Error: Invalid Entry" : "Erreur: entrée non valide", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             TotalMonthlySalesTextBox.Text = TotalMonthlySalesTextBox.Text.Remove(TotalMonthlySalesTextBox.Text.Length - 1);
                             TotalMonthlySalesTextBox.SelectionStart = TotalMonthlySalesTextBox.Text.Length;
                         }
                     }
                     break;
+                }
             }
         }
-
 
         /// <summary>
         /// This method handle clicks on all the buttons
@@ -80,6 +83,9 @@ namespace Sharp_Mail_Order___SALES_BONUS
         {
             Button ClickHandler = sender as Button;
 
+         // text fields cannot be empty
+         if (HoursWorkedTextBox.Text != "")
+         {
             switch (ClickHandler.Tag.ToString())
             {
                 case "Calculate":
@@ -102,9 +108,11 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     // setting salesBonus text field to calculated value(string) 
                     SalesBonusTextBox.Text = salesBonus.ToString();
                     break;
+
                 case "Print":
-                    MessageBox.Show("Your information is in the process to print. Please Wait...", "Printing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(EnglishRadioButton.Checked ? "Your information is in the process to print. Please Wait..." : "Vos informations sont en cours d'impression. S'il vous plaît, attendez...", EnglishRadioButton.Checked ? "Printing" : "Impression", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
+
                 case "Clear":
                     EmployeeNameTextBox.Text = "";
                     EmployeeIDTextBox.Text = "";
@@ -114,6 +122,35 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     // focusing cursor to the first field employee name
                     EmployeeNameTextBox.Focus();
                     break;
+                }
+            }
+        }
+
+        public void languageChanger(object sender, EventArgs e)
+        {
+            if (FrançaisRadioButton.Checked == true)
+            {
+                LanguageGroupBox.Text = "La langue";
+                EmployeeNameLabel.Text = "Le nom de l'employé";
+                EmployeeIDLabel.Text = "Employé id:";
+                HoursWorkedLabel.Text = "Heures travaillées:";
+                TotalMonthlySalesLabel.Text = "Total des ventes mensuelles:";
+                SalesBonusLabel.Text = "Bonus de vente:";
+                CalculateButton.Text = "Calculer";
+                PrintButton.Text = "Impression";
+                ClearButton.Text = "Clair";
+            }
+            else
+            {
+                LanguageGroupBox.Text = "Language";
+                EmployeeNameLabel.Text = "Employee's Name";
+                EmployeeIDLabel.Text = "Employee ID:";
+                HoursWorkedLabel.Text = "Hours Worked:";
+                TotalMonthlySalesLabel.Text = "Total Monthly Sales:";
+                SalesBonusLabel.Text = "Sales Bonus:";
+                CalculateButton.Text = "Calculate";
+                PrintButton.Text = "Print";
+                ClearButton.Text = "Clear";
             }
         }
         
