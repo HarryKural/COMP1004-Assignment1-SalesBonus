@@ -43,7 +43,7 @@
             this.TotalMonthlySalesTextBox = new System.Windows.Forms.TextBox();
             this.SalesBonusTextBox = new System.Windows.Forms.TextBox();
             this.Language = new System.Windows.Forms.GroupBox();
-            this.FrancaisRadioButton = new System.Windows.Forms.RadioButton();
+            this.FrançaisRadioButton = new System.Windows.Forms.RadioButton();
             this.EnglishRadioButton = new System.Windows.Forms.RadioButton();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.Language.SuspendLayout();
@@ -156,7 +156,8 @@
             this.HoursWorkedTextBox.Name = "HoursWorkedTextBox";
             this.HoursWorkedTextBox.Size = new System.Drawing.Size(149, 20);
             this.HoursWorkedTextBox.TabIndex = 15;
-            this.HoursWorkedTextBox.TextChanged += new System.EventHandler(this.validHoursWorked);
+            this.HoursWorkedTextBox.Tag = "hoursWorked";
+            this.HoursWorkedTextBox.TextChanged += new System.EventHandler(this.validValuesChecker);
             // 
             // TotalMonthlySalesTextBox
             // 
@@ -164,6 +165,8 @@
             this.TotalMonthlySalesTextBox.Name = "TotalMonthlySalesTextBox";
             this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(149, 20);
             this.TotalMonthlySalesTextBox.TabIndex = 16;
+            this.TotalMonthlySalesTextBox.Tag = "monthlySales";
+            this.TotalMonthlySalesTextBox.TextChanged += new System.EventHandler(this.validValuesChecker);
             // 
             // SalesBonusTextBox
             // 
@@ -176,7 +179,7 @@
             // 
             // Language
             // 
-            this.Language.Controls.Add(this.FrancaisRadioButton);
+            this.Language.Controls.Add(this.FrançaisRadioButton);
             this.Language.Controls.Add(this.EnglishRadioButton);
             this.Language.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Language.Location = new System.Drawing.Point(241, 47);
@@ -186,17 +189,17 @@
             this.Language.TabStop = false;
             this.Language.Text = "Language";
             // 
-            // FrancaisRadioButton
+            // FrançaisRadioButton
             // 
-            this.FrancaisRadioButton.AutoSize = true;
-            this.FrancaisRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FrancaisRadioButton.Location = new System.Drawing.Point(6, 52);
-            this.FrancaisRadioButton.Name = "FrancaisRadioButton";
-            this.FrancaisRadioButton.Size = new System.Drawing.Size(78, 20);
-            this.FrancaisRadioButton.TabIndex = 9;
-            this.FrancaisRadioButton.TabStop = true;
-            this.FrancaisRadioButton.Text = "Français";
-            this.FrancaisRadioButton.UseVisualStyleBackColor = true;
+            this.FrançaisRadioButton.AutoSize = true;
+            this.FrançaisRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrançaisRadioButton.Location = new System.Drawing.Point(6, 52);
+            this.FrançaisRadioButton.Name = "FrançaisRadioButton";
+            this.FrançaisRadioButton.Size = new System.Drawing.Size(78, 20);
+            this.FrançaisRadioButton.TabIndex = 9;
+            this.FrançaisRadioButton.TabStop = true;
+            this.FrançaisRadioButton.Text = "Français";
+            this.FrançaisRadioButton.UseVisualStyleBackColor = true;
             // 
             // EnglishRadioButton
             // 
@@ -269,7 +272,7 @@
         private System.Windows.Forms.TextBox TotalMonthlySalesTextBox;
         private System.Windows.Forms.TextBox SalesBonusTextBox;
         private System.Windows.Forms.GroupBox Language;
-        private System.Windows.Forms.RadioButton FrancaisRadioButton;
+        private System.Windows.Forms.RadioButton FrançaisRadioButton;
         private System.Windows.Forms.RadioButton EnglishRadioButton;
         private System.Windows.Forms.PictureBox Logo;
     }

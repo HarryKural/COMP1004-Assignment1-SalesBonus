@@ -16,38 +16,62 @@ namespace Sharp_Mail_Order___SALES_BONUS
         {
             InitializeComponent();
         }
-
+        
         /// <summary>
         /// This method validates that value entered
-        /// cannot exceed 160 hours & is positive
+        /// cannot exceed 160 hours & is positive + values of monthly sales
         /// </summary>
-        public void validHoursWorked(object sender, EventArgs e)
+        public void validValuesChecker(object sender, EventArgs e)
         {
-            double hoursWorked = 0;
+            TextBox ValidValues = sender as TextBox;
 
-            // will work if it is a number
-            if (Double.TryParse(HoursWorkedTextBox.Text, out hoursWorked))
+            switch (ValidValues.Tag.ToString())
             {
-                if (hoursWorked < 0 || hoursWorked > 160)
-                {
-                    MessageBox.Show("Hours worked cannot exceed 160 hours.", "Warning: Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
-                    HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
-                }
+                case "hoursWorked":
+
+                    double hoursWorked = 0;
+
+                    // will work if it is a number
+                    if (Double.TryParse(HoursWorkedTextBox.Text, out hoursWorked))
+                    {
+                        if (hoursWorked < 0 || hoursWorked > 160)
+                        {
+                            MessageBox.Show("Hours worked cannot exceed 160 hours.", "Warning: Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
+                            HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
+                        }
+                    }
+                    else
+                    {
+                        // error message if entered value is not a number
+                        if (HoursWorkedTextBox.Text != "")
+                        {
+                            MessageBox.Show("You must enter any number.", "Error: Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // HoursWorkedTextBox.Text = String.Empty;
+                            HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
+                            HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
+                        }
+                    }
+                    break;
+                case "monthlySales":
+
+                    double monthlySales = 0;
+
+                    if (!Double.TryParse(TotalMonthlySalesTextBox.Text, out monthlySales))
+                    {
+                        // error message if entered value is not a number
+                        if (TotalMonthlySalesTextBox.Text != "")
+                        {
+                            MessageBox.Show("You must enter any number.", "Error: Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            TotalMonthlySalesTextBox.Text = TotalMonthlySalesTextBox.Text.Remove(TotalMonthlySalesTextBox.Text.Length - 1);
+                            TotalMonthlySalesTextBox.SelectionStart = TotalMonthlySalesTextBox.Text.Length;
+                        }
+                    }
+                    break;
             }
-            else
-            {
-                // error message if entered value is not a number
-                if (HoursWorkedTextBox.Text != "")
-                {
-                    MessageBox.Show("You must enter any number.", "Error: Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    // HoursWorkedTextBox.Text = String.Empty;
-                    HoursWorkedTextBox.Text = HoursWorkedTextBox.Text.Remove(HoursWorkedTextBox.Text.Length - 1);
-                    HoursWorkedTextBox.SelectionStart = HoursWorkedTextBox.Text.Length;
-                }
-            }
-            
         }
+
 
         /// <summary>
         /// This method handle clicks on all the buttons
