@@ -161,6 +161,7 @@
             this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(146, 20);
             this.TotalMonthlySalesTextBox.TabIndex = 16;
             this.TotalMonthlySalesTextBox.Tag = "monthlySales";
+            this.TotalMonthlySalesTextBox.Text = "$";
             this.TotalMonthlySalesTextBox.TextChanged += new System.EventHandler(this.validValuesChecker);
             // 
             // SalesBonusTextBox

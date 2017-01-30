@@ -1,4 +1,15 @@
-﻿using System;
+﻿/// <summary>
+/// App name: Sharp Mail Order – SALES BONUS
+/// Author's name: Harshit Sharma
+/// Student Number#: 200333254
+/// App Creation Date: Jan 16, 2017
+/// Rapid Application Development - Assignment 1
+/// App description: This application is used to calculate sales bonus of
+/// an employee percentage of hours he or she worked during the bonus
+/// period (a total of 160 hours)
+/// </summary>
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +31,7 @@ namespace Sharp_Mail_Order___SALES_BONUS
         /// <summary>
         /// This method validates that value entered
         /// cannot exceed 160 hours & is positive + values of monthly sales
+        /// Using ternary operator in message box to switch language
         /// </summary>
         public void validValuesChecker(object sender, EventArgs e)
         {
@@ -34,7 +46,9 @@ namespace Sharp_Mail_Order___SALES_BONUS
 
                     double hoursWorked = 0;
 
-                    // will work if it is a number
+                    /// will work if it is a number
+                    /// removing 1 last value if it is > 160
+                    /// cursor will move to the end value of text field
                     if (Double.TryParse(HoursWorkedTextBox.Text, out hoursWorked))
                     {
                         if (hoursWorked < 0 || hoursWorked > 160)
@@ -57,19 +71,17 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     }
                     break;
 
-                case "monthlySales":
+                    case "monthlySales":
 
                     double monthlySales = 0;
-
-                    if (!Double.TryParse(TotalMonthlySalesTextBox.Text, out monthlySales))
+                    string salesAmount = TotalMonthlySalesTextBox.Text.Replace("$", "");
+                        
+                    // error message if entered value is not a number
+                    if (salesAmount != "" && !Double.TryParse(salesAmount, out monthlySales))
                     {
-                        // error message if entered value is not a number
-                        if (TotalMonthlySalesTextBox.Text != "")
-                        {
-                            MessageBox.Show(EnglishRadioButton.Checked ? "You must enter any number." : "Vous devez entrer n'importe quel numéro.", EnglishRadioButton.Checked ? "Error: Invalid Entry" : "Erreur: entrée non valide", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            TotalMonthlySalesTextBox.Text = TotalMonthlySalesTextBox.Text.Remove(TotalMonthlySalesTextBox.Text.Length - 1);
-                            TotalMonthlySalesTextBox.SelectionStart = TotalMonthlySalesTextBox.Text.Length;
-                        }
+                        MessageBox.Show(EnglishRadioButton.Checked ? "You must enter any number." : "Vous devez entrer n'importe quel numéro.", EnglishRadioButton.Checked ? "Error: Invalid Entry" : "Erreur: entrée non valide", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TotalMonthlySalesTextBox.Text = TotalMonthlySalesTextBox.Text.Remove(TotalMonthlySalesTextBox.Text.Length - 1);
+                        TotalMonthlySalesTextBox.SelectionStart = TotalMonthlySalesTextBox.Text.Length;
                     }
                     break;
                 }
@@ -88,10 +100,11 @@ namespace Sharp_Mail_Order___SALES_BONUS
          {
             switch (ClickHandler.Tag.ToString())
             {
+                // calculation
                 case "Calculate":
-                    // variables
+                    // variables to do calculations and parsing them to double
                     double hoursWorked = Double.Parse(HoursWorkedTextBox.Text);
-                    double monthlySales = Double.Parse(TotalMonthlySalesTextBox.Text);
+                    double monthlySales = Double.Parse(TotalMonthlySalesTextBox.Text.Replace("$", ""));
                     double percentageOfHoursWorked;
                     double bonusAmount;
                     double salesBonus;
@@ -109,10 +122,12 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     SalesBonusTextBox.Text = salesBonus.ToString();
                     break;
 
+                // will print if clicked print button
                 case "Print":
                     MessageBox.Show(EnglishRadioButton.Checked ? "Your information is in the process to print. Please Wait..." : "Vos informations sont en cours d'impression. S'il vous plaît, attendez...", EnglishRadioButton.Checked ? "Printing" : "Impression", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
 
+                // clear text fields except monthly sales
                 case "Clear":
                     EmployeeNameTextBox.Text = "";
                     EmployeeIDTextBox.Text = "";
@@ -126,6 +141,12 @@ namespace Sharp_Mail_Order___SALES_BONUS
             }
         }
 
+        /// <summary>
+        /// This method is used to change language from
+        /// English to Français or vice versa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void languageChanger(object sender, EventArgs e)
         {
             if (FrançaisRadioButton.Checked == true)
