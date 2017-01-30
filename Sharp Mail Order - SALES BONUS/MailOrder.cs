@@ -3,6 +3,7 @@
 /// Author's name: Harshit Sharma
 /// Student Number#: 200333254
 /// App Creation Date: Jan 16, 2017
+/// Last Modified Date: Jan 29, 2017
 /// Rapid Application Development - Assignment 1
 /// App description: This application is used to calculate sales bonus of
 /// an employee percentage of hours he or she worked during the bonus
@@ -74,6 +75,7 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     case "monthlySales":
 
                     double monthlySales = 0;
+                    
                     string salesAmount = TotalMonthlySalesTextBox.Text.Replace("$", "");
                         
                     // error message if entered value is not a number
@@ -94,14 +96,19 @@ namespace Sharp_Mail_Order___SALES_BONUS
         public void buttonClickHandler(object sender, EventArgs e)
         {
             Button ClickHandler = sender as Button;
-
-         // text fields cannot be empty
-         if (HoursWorkedTextBox.Text != "")
-         {
+            
             switch (ClickHandler.Tag.ToString())
             {
                 // calculation
                 case "Calculate":
+
+                    // it will not calculate if there is nothing in the fields
+                    if (HoursWorkedTextBox.Text.ToString().Equals("") || TotalMonthlySalesTextBox.Text.ToString().Equals(""))
+                    {
+                        MessageBox.Show(EnglishRadioButton.Checked ? "You must enter any valid value." : "Vous devez saisir une valeur valide.", EnglishRadioButton.Checked ? "Error: Invalid value" : "Erreur: valeur non valide", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
                     // variables to do calculations and parsing them to double
                     double hoursWorked = Double.Parse(HoursWorkedTextBox.Text);
                     double monthlySales = Double.Parse(TotalMonthlySalesTextBox.Text.Replace("$", ""));
@@ -119,7 +126,11 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     salesBonus = percentageOfHoursWorked * bonusAmount;
 
                     // setting salesBonus text field to calculated value(string) 
-                    SalesBonusTextBox.Text = salesBonus.ToString();
+                    SalesBonusTextBox.Text = salesBonus.ToString("C", System.Globalization.CultureInfo.CurrentCulture);
+
+                    // setting value of monthly sales to standard currency 
+                    TotalMonthlySalesTextBox.Text = monthlySales.ToString("C", System.Globalization.CultureInfo.CurrentCulture);
+                    }
                     break;
 
                 // will print if clicked print button
@@ -137,7 +148,6 @@ namespace Sharp_Mail_Order___SALES_BONUS
                     // focusing cursor to the first field employee name
                     EmployeeNameTextBox.Focus();
                     break;
-                }
             }
         }
 
@@ -149,6 +159,8 @@ namespace Sharp_Mail_Order___SALES_BONUS
         /// <param name="e"></param>
         public void languageChanger(object sender, EventArgs e)
         {
+            /// if Français button is checked to true it will
+            /// convert to french else to english
             if (FrançaisRadioButton.Checked == true)
             {
                 LanguageGroupBox.Text = "La langue";
